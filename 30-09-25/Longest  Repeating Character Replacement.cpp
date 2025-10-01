@@ -12,14 +12,14 @@ public:
         for (int r= 0; r < s.size(); r++) {
             char ch = s[r];
             count[ch - 'A']++;
-            maxcount = max(maxc, count[ch - 'A']);
+            maxc = max(maxc, count[ch - 'A']);
 
             while (r - l + 1 - maxc > k) {
                 count[s[l] - 'A']--;
                 l++;
             }
 
-            maxlen = max(maxl, r - l+ 1);
+            maxl = max(maxl, r - l+ 1);
         }
 
         return maxl;
